@@ -3,11 +3,13 @@
 
 
 def check_palindrom(input_string):
-    '''
-    Метод проверяющий строку на то, является ли
-    она палиндромом.
-    :param input_string: строка
-    :return: True, если строка являестя палиндромом
-    False иначе
-    '''
-    raise NotImplementedError
+    input_string = input_string.replace(" ", "a")
+    if input_string.isalnum():
+        for i in range(0, len(input_string)//2, 1):
+            if input_string[i] == input_string[-i-1]:
+                continue
+            else:
+                return False
+        return True
+    else:
+        return False
